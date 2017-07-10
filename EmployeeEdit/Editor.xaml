@@ -1,0 +1,47 @@
+﻿<Window x:Class="Practice.Editor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:local="clr-namespace:Practice"
+        mc:Ignorable="d"
+        Title="Редактор" Height="227" Width="300" ShowInTaskbar="False">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel HorizontalAlignment="Right">
+            <Label HorizontalAlignment="Right">Таб. №</Label>
+            <Label HorizontalAlignment="Right">Ф.И.О.</Label>
+            <Label HorizontalAlignment="Right">Должность</Label>
+            <Label HorizontalAlignment="Right">Цех</Label>
+            <Label HorizontalAlignment="Right">Начало смены</Label>
+            <Label HorizontalAlignment="Right">Конец смены</Label>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <TextBox Margin="4" Name="TabelTextBox"></TextBox>
+            <TextBox Margin="4" Name="NameTextBox"></TextBox>
+            <TextBox Margin="4" Name="PositionTextBox"></TextBox>
+            <Grid Margin="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <ComboBox Name="DepartmentComboBox"></ComboBox>
+                <Button Margin="4,0,0,0" Grid.Column="1" Width="20" Click="DepartmentEdit_Click" >+</Button>
+            </Grid>
+            <xctk:TimePicker Name="StartTimePicker" Value="9:00" Margin="4"/>
+            <xctk:TimePicker Name="EndTimePicker" Value="18:00" Margin="4"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Name="RandomButton" Margin="4" HorizontalAlignment="Right" Width="70">Cлучайно</Button>
+            <Button Margin="4" Name="AddEditButton" HorizontalAlignment="Right" Width="70" Click="AddEdit_Click">Добавить</Button>
+        </StackPanel>
+    </Grid>
+</Window>
